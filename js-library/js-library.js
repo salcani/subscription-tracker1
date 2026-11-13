@@ -56,3 +56,17 @@ function isEmpty(value) {
 function showMessage(element, message) {
     element.textContent = message;
 }
+// 10. Check if an email is valid
+function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+// 11. Get today's date
+function getTodayDate() {
+    return new Date().toISOString().split("T")[0];
+}
+
+// 12. Generate a unique ID
+function generateId() {
+    return Date.now() + Math.floor(Math.random() * 1000);
+}
