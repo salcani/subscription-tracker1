@@ -135,3 +135,55 @@ body {
         overflow-x: auto;
     }
 }
+/* 11. Status labels */
+.status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.status-active {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-expired {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* 12. Alert messages */
+.alert {
+    padding: 12px;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* 13. Footer */
+.footer {
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+/* 14. Focus styles */
+.form-control:focus {
+    outline: 2px solid #555;
+    outline-offset: 2px;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
