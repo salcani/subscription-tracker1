@@ -1,5 +1,4 @@
 
-
 // MAIN APPLICATION JAVASCRIPT
 
 const STORAGE_KEY = "subscriptions";
@@ -48,6 +47,7 @@ if (subscriptionForm) {
 
         const message = selectElement("#formMessage");
 
+        // Check empty fields
         if (
             isEmpty(service) ||
             isEmpty(provider) ||
@@ -59,6 +59,18 @@ if (subscriptionForm) {
             return;
         }
 
+        // Check renewal date
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        const selectedDate = new Date(renewalDate + "T00:00:00");
+
+        if (selectedDate < today) {
+            showMessage(message, "Renewal date cannot be in the past.");
+            return;
+        }
+
+        // Create new subscription
         const subscriptions = getSubscriptions();
 
         const newSubscription = {
