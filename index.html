@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Tracker - Home</title>
+
+    <link rel="stylesheet" href="css-library/css-library.css">
+</head>
+<body>
+
+    <!-- Header and Navigation -->
+    <header class="header">
+        <div class="container nav">
+            <h2>Subscription Tracker</h2>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="add.html">Add Subscription</a></li>
+                    <li><a href="subscriptions.html">Subscriptions</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <section class="section text-center">
+            <h1>Welcome to Subscription Tracker</h1>
+            <p>Manage all your subscriptions in one place.</p>
+
+            <a href="add.html" class="btn btn-primary mt-20">
+                Add a Subscription
+            </a>
+        </section>
+
+        <!-- Summary -->
+        <section class="section">
+            <h2>Subscription Summary</h2>
+
+            <div class="card">
+                <h3>Total Subscriptions</h3>
+                <p id="totalSubscriptions">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Expired Subscriptions</h3>
+                <p id="expiredSubscriptions">0</p>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js-library/js-library.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>

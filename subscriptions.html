@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Subscriptions</title>
+
+    <link rel="stylesheet" href="css-library/css-library.css">
+</head>
+<body>
+
+    <!-- Header and Navigation -->
+    <header class="header">
+        <div class="container nav">
+            <h2>Subscription Tracker</h2>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="add.html">Add Subscription</a></li>
+                    <li><a href="subscriptions.html">Subscriptions</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Subscriptions Table -->
+    <main class="container">
+        <section class="section">
+            <h1>My Subscriptions</h1>
+
+            <a href="add.html" class="btn btn-primary">
+                Add New Subscription
+            </a>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Provider</th>
+                        <th>Subscriber</th>
+                        <th>Renewal Date</th>
+                        <th>Category</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="subscriptionsTable">
+                    <!-- JavaScript will add subscriptions here -->
+                </tbody>
+            </table>
+
+            <p id="emptyMessage" class="mt-20">
+                No subscriptions have been added yet.
+            </p>
+        </section>
+    </main>
+
+    <script src="js-library/js-library.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>
