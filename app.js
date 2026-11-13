@@ -1,4 +1,5 @@
 
+
 // MAIN APPLICATION JAVASCRIPT
 
 const STORAGE_KEY = "subscriptions";
@@ -161,8 +162,9 @@ if (subscriptionsTable) {
 
 const totalElement = selectElement("#totalSubscriptions");
 const expiredElement = selectElement("#expiredSubscriptions");
+const activeElement = selectElement("#activeSubscriptions");
 
-if (totalElement && expiredElement) {
+if (totalElement && expiredElement && activeElement) {
 
     const subscriptions = getSubscriptions();
 
@@ -172,6 +174,11 @@ if (totalElement && expiredElement) {
         return getStatus(subscription.renewalDate) === "Expired";
     }).length;
 
+    const active = subscriptions.filter(function(subscription) {
+        return getStatus(subscription.renewalDate) === "Active";
+    }).length;
+
     totalElement.textContent = total;
     expiredElement.textContent = expired;
+    activeElement.textContent = active;
 }
