@@ -137,17 +137,25 @@ if (subscriptionsTable) {
 
             deleteButton.type = "button";
 
+            // Confirm before deleting
             deleteButton.addEventListener("click", function() {
 
-                const updatedSubscriptions = getSubscriptions().filter(
-                    function(item) {
-                        return item.id !== subscription.id;
-                    }
+                const confirmed = confirm(
+                    "Are you sure you want to delete this subscription?"
                 );
 
-                saveSubscriptions(updatedSubscriptions);
+                if (confirmed) {
 
-                displaySubscriptions();
+                    const updatedSubscriptions = getSubscriptions().filter(
+                        function(item) {
+                            return item.id !== subscription.id;
+                        }
+                    );
+
+                    saveSubscriptions(updatedSubscriptions);
+
+                    displaySubscriptions();
+                }
             });
 
             actionCell.appendChild(deleteButton);
