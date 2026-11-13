@@ -1,6 +1,7 @@
+
 // JAVASCRIPT LIBRARY
 
-// 1. Select an HTML element
+// 1. Select one HTML element
 function selectElement(selector) {
     return document.querySelector(selector);
 }
@@ -19,7 +20,16 @@ function saveData(key, data) {
 function getData(key) {
     const data = localStorage.getItem(key);
 
-    return data ? JSON.parse(data) : [];
+    if (!data) {
+        return [];
+    }
+
+    try {
+        return JSON.parse(data);
+    } catch (error) {
+        console.error("Error reading saved data:", error);
+        return [];
+    }
 }
 
 // 5. Delete data from LocalStorage
@@ -52,10 +62,11 @@ function isEmpty(value) {
     return value.trim() === "";
 }
 
-// 9. Display a message
+// 9. Show a message
 function showMessage(element, message) {
     element.textContent = message;
 }
+
 // 10. Check if an email is valid
 function isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
